@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MonitorListExtractor": {
+      "commandName": "Project",
+      "commandLineArgs": "..\\..\\..\\..\\MonitorListExtractor.Testing\\Public\\Configurations.xml"
+    }
+  }
+}

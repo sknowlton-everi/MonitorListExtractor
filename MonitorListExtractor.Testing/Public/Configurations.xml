@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  NOTE: Each Monitors element should contain Monitor child elements in the order in which they
+  show up in DxDiag.exe (the 'Display' tabs). The Monitor child elements are loaded in the order
+  listed and the first Monitor child element is viewed as the "primary" display by Ogre.
+
+  Changes made to this file will automatically be applied to all existing hardware.xml files
+  through an automatic triggering of the cabinet configuration selection UI, based on the
+  current platform build version not being equal to the version contained in the existing
+  hardware.xml file on the writable drive.
+
+  Common aspect ratios:
+  =====================
+
+  Width:          Height:               Ratio:              Common names:
+  ======          =======               ======              =============
+  640             480                   4:3                 MINI (VGA)
+  1280            242                   16:3                BUTTON_PANEL
+  1280            342                   15:4                BUTTON_PANEL (Digitizer)
+  1280            1024                  5:4                 Common PC screens until 2003
+  1360            768                   16:9                HDTV and widescreen SDTV
+  1920            1080                  16:9                HDTV and widescreen SDTV
+  1920            1200                  16:10               Widescreen PC (WXGA)
+  1920            1920                  1:1                 Square monitor
+  3840            2160                  16:9                4K monitor
+
+-->
+<ConfigurationsByHwPlatform>
+  <Configurations hwplatform="Quixant" hwmodel="QX40">
+    <Configuration name="Standard Mech" description="Mini with Top Screen" image="Images/Mech.bmp" cabinetStyle="MMG_mech">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1280" height="1024" rotation="0" frequency="60" aspectRatio="5:4" touchType="MicroTouch" EDID="EFL076F" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1024" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="Skyline Mech" description="Mini with Skyline Top Screen" image="Images/Skyline.bmp" cabinetStyle="MMG_skyline">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1920" height="1200" rotation="90" frequency="60" aspectRatio="10:16" touchType="MicroTouch" EDID="EFL2402" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1920" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="Skyline" packetRows="4" packetFormat="0xFB"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="Texan Dual Video" description="Texan Dual Video Cabinet" image="Images/Texan.bmp" cabinetStyle="MMG_texan">
+      <BackPlane>
+        <Jumpers>
+          <Jumper pinIn="28" flagState="0" />
+        </Jumpers>
+      </BackPlane>
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1360" height="768" rotation="0" frequency="60" touchType="MicroTouch" EDID="EFL5202_23" touchStyle="Standard"/>
+        <Monitor index="5" name="TOP" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" touchType="None" EDID="EFL5202_23"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="0.400" EQUALIZER_LOW_CUTOFF="90.0" EQUALIZER_MID1_GAIN="0.650" EQUALIZER_MID1_CENTER="250.0" EQUALIZER_MID1_WIDTH="0.500" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Texan Dual Video with Mini" description="Texan Dual Video with Mini Cabinet" image="Images/Texan.bmp" cabinetStyle="MMG_texan">
+      <BackPlane>
+        <Jumpers>
+          <Jumper pinIn="28" flagState="0" />
+        </Jumpers>
+      </BackPlane>
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1360" height="768" rotation="0" frequency="60" touchType="MicroTouch" EDID="EFL5202_23" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="-480" width="640" height="480" rotation="0" frequency="60" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+        <Monitor index="6" name="TOP" left="0" top="-1248" width="1360" height="768" rotation="0" frequency="60" touchType="None" EDID="EFL5202_23"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="0.400" EQUALIZER_LOW_CUTOFF="90.0" EQUALIZER_MID1_GAIN="0.650" EQUALIZER_MID1_CENTER="250.0" EQUALIZER_MID1_WIDTH="0.500" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Skyline Revolve Mech" description="Mini with Skyline Revolve Top Screen" image="Images/Revolve.bmp" cabinetStyle="MMG_revolve">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1920" height="1080" rotation="270" frequency="60" aspectRatio="9:16" touchType="MicroTouch" EDID="MMG1609A2" controllerIDs="23,160901" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1920" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="SkylineRevolve" packetRows="4" packetFormat="0xFB"/>
+      </Marquees>
+      <MechanicalWheels />
+      <MechanicalBells />
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="Player Classic Boost" description="Mini with Top Screen and Boost Topper" image="Images/MechBoost.bmp" cabinetStyle="MMG_mechb">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1280" height="1024" rotation="0" frequency="60" aspectRatio="5:4" touchType="MicroTouch" EDID="EFL076F" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1024" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+        <Monitor index="6" name="VTOP1" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="HDX" description="Dual Video with LCD button panel" image="Images/HDX.bmp" cabinetStyle="MMG_hdx">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="6" name="MAIN" left="0" top="0" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="MicroTouch" EDID="MMG1609A2" controllerIDs="23,160901" touchStyle="Standard"/>
+        <Monitor index="5" name="TOP" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="MicroTouch" touchOptional="true" controllerIDs="123,160902" EDID="MMG1609A1"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="768" width="1280" height="242" rotation="0" frequency="60" aspectRatio="16:3" touchType="MicroTouch" EDID="EFL5202_BP" controllerIDs="1225" touchStyle="Standard"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn"/>
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="CoreHDX" packetRows="2" packetFormat="0x7B"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="0.600" EQUALIZER_HIGH_CUTOFF="4000.0" EQUALIZER_OVERALL_GAIN="0.70"/>
+          </Profile>
+          <Profile type="HDX">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.70"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="0.600" EQUALIZER_HIGH_CUTOFF="4000.0" EQUALIZER_OVERALL_GAIN="0.40"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="HDX with Single Topper" description="Dual Video with LCD button panel and Single Topper Display" image="Images/HDX_N.bmp" cabinetStyle="MMG_hdx">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="6" name="MAIN" left="0" top="0" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="MicroTouch" EDID="MMG1609A2" controllerIDs="23,160901" touchStyle="Standard"/>
+        <Monitor index="5" name="TOP" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="MicroTouch" touchOptional="true" controllerIDs="123,160902" EDID="MMG1609A1"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="768" width="1280" height="242" rotation="0" frequency="60" aspectRatio="16:3" touchType="MicroTouch" EDID="EFL5202_BP" controllerIDs="1225" touchStyle="Standard"/>
+        <Monitor index="2" name="VTOP1" left="0" top="-1536" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703" isG2STopper="true"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn"/>
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="CoreHDX" packetRows="2" packetFormat="0x7B"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="0.600" EQUALIZER_HIGH_CUTOFF="4000.0" EQUALIZER_OVERALL_GAIN="0.70"/>
+          </Profile>
+          <Profile type="HDX">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.70"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="0.600" EQUALIZER_HIGH_CUTOFF="4000.0" EQUALIZER_OVERALL_GAIN="0.40"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Empire MPX" description="Empire MPX with LCD button panel" image="Images/EMPX.bmp" cabinetStyle="MMG_empx">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="5" name="MAIN" left="0" top="0" width="1920" height="1080" rotation="90" frequency="60" aspectRatio="9:16" touchType="Windows" EDID="EFL3702" touchStyle="Standard"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="1920" width="1280" height="242" rotation="0" frequency="60" aspectRatio="16:3" touchType="MicroTouch" EDID="EFL5202_BP" controllerIDs="1225" touchStyle="Standard"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn"/>
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="EmpireMPX" packetRows="2" packetFormat="0x7B"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Empire MPX with Single Topper" description="Empire MPX with LCD button panel and Single Topper Display" image="Images/EMPX_BTOP.bmp" cabinetStyle="MMG_empxEnhanced">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="5" name="MAIN" left="0" top="0" width="1920" height="1080" rotation="90" frequency="60" aspectRatio="9:16" touchType="Windows" EDID="EFL3702" touchStyle="Standard"/>
+        <Monitor index="6" name="VTOP1" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703" isG2STopper="true"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="1920" width="1280" height="242" rotation="0" frequency="60" aspectRatio="16:3" touchType="MicroTouch" EDID="EFL5202_BP" controllerIDs="1225" touchStyle="Standard"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn"/>
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="EmpireMPX" packetRows="2" packetFormat="0x7B"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.00"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Empire HRA" description="Empire HRA with LCD button panel" image="Images/EHRA.bmp" cabinetStyle="MMG_ehra">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="2" name="MAIN" left="0" top="0" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="MicroTouch" EDID="EFL2703" controllerIDs="2701" touchStyle="Standard"/>
+        <Monitor index="5" name="TOP" left="0" top="-1920" width="1920" height="1080" rotation="270" frequency="60" aspectRatio="9:16" touchType="None" EDID="EFL5503"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="768" width="1280" height="242" rotation="0" frequency="60" aspectRatio="16:3" touchType="MicroTouch" EDID="EFL5202_BP" controllerIDs="1225" touchStyle="Standard"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn"/>
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="EmpireArenaStandalone" packetRows="2" packetFormat="0x7B"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="4.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="TopLeft" text="TopLeft"/>
+            <Button id="TopRight" text="TopRight"/>
+            <Button id="MiddleLeft" text="Left"/>
+            <Button id="MiddleCenter" text="Subwoofer"/>
+            <Button id="MiddleRight" text="Right"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.00"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="TS Top Box M26" description="A mechanical cabinet with a square monitor" image="Images/TSTopBox.bmp" cabinetStyle="MMG_mechsquare">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1920" height="1920" rotation="0" frequency="60" aspectRatio="1:1" touchType="Windows" EDID="TOV001A" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1920" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="TS Top Box M26 Boost" description="TS Top Box M26 Cabinet with Apex N" image="Images/TSTopBoxBoost.bmp" cabinetStyle="MMG_mechsquareboost">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1920" height="1920" rotation="0" frequency="60" aspectRatio="1:1" touchType="Windows" EDID="TOV001A" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1920" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+        <Monitor index="6" name="VTOP1" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+  </Configurations>
+  <Configurations hwplatform="Quixant" hwmodel="QX60">
+    <Configuration name="Standard Mech" description="Mini with Top Screen" image="Images/Mech.bmp" cabinetStyle="MMG_mech">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1280" height="1024" rotation="0" frequency="60" aspectRatio="5:4" touchType="MicroTouch" EDID="EFL076F" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1024" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="Skyline Mech" description="Mini with Skyline Top Screen" image="Images/Skyline.bmp" cabinetStyle="MMG_skyline">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1920" height="1200" rotation="90" frequency="60" aspectRatio="10:16" touchType="MicroTouch" EDID="EFL2402" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1920" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="Skyline" packetRows="4" packetFormat="0xFB"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="Skyline Revolve Mech" description="Mini with Skyline Revolve Top Screen" image="Images/Revolve.bmp" cabinetStyle="MMG_revolve">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1920" height="1080" rotation="270" frequency="60" aspectRatio="9:16" touchType="MicroTouch" EDID="MMG1609A2" controllerIDs="23,160901" touchStyle="Standard"/>
+        <Monitor index="4" name="MINI" left="0" top="1920" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="SkylineRevolve" packetRows="4" packetFormat="0xFB"/>
+      </Marquees>
+      <MechanicalWheels />
+      <MechanicalBells />
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="Player Classic Boost" description="Mini with Top Screen and Boost Topper" image="Images/MechBoost.bmp" cabinetStyle="MMG_mechb">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1280" height="1024" rotation="0" frequency="60" aspectRatio="5:4" touchType="MicroTouch" EDID="EFL076F" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1024" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+        <Monitor index="6" name="VTOP1" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="TS Top Box M26" description="A mechanical cabinet with a square monitor" image="Images/TSTopBox.bmp" cabinetStyle="MMG_mechsquare">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1920" height="1920" rotation="0" frequency="60" aspectRatio="1:1" touchType="Windows" EDID="TOV001A" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1920" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="TS Top Box M26 Boost" description="TS Top Box M26 Cabinet with Apex N" image="Images/TSTopBoxBoost.bmp" cabinetStyle="MMG_mechsquareboost">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1920" height="1920" rotation="0" frequency="60" aspectRatio="1:1" touchType="Windows" EDID="TOV001A" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1920" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+        <Monitor index="6" name="VTOP1" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="PCS Mech" description="Player Classic Signature Mech" image="Images/PCSMech.bmp" cabinetStyle="MMG_pcsmech" digitalMechReelAssetsFolder="PCS_DMR/MINI">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="7" name="MAIN" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="Windows" touchStyle="Standard" EDID="EFL2103"/>
+        <Monitor index="2" name="TOP" left="0" top="-2880" width="2560" height="2880" rotation="0" frequency="60" aspectRatio="16:18" touchType="None" EDID="TOV001C"/>
+        <Monitor index="5" name="MINI" left="0" top="1080" width="1280" height="204" rotation="0" frequency="60" aspectRatio="16:3" touchType="Windows" touchStyle="Standard" EDID="EFL1503_PCS"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="6UpDown-button" description="6 button with up down bet" image="Images/6UpDown-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="PCS Mech With Single Topper" description="Player Classic Signature Mech With Single Topper" image="Images/PCSMechTopper.bmp" cabinetStyle="MMG_pcsmechtopper" digitalMechReelAssetsFolder="PCS_DMR/MINI">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="7" name="MAIN" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="Windows" touchStyle="Standard" EDID="EFL2103"/>
+        <Monitor index="2" name="TOP" left="0" top="-2880" width="2560" height="2880" rotation="0" frequency="60" aspectRatio="16:18" touchType="None" EDID="TOV001C"/>
+        <Monitor index="5" name="MINI" left="0" top="1080" width="1280" height="204" rotation="0" frequency="60" aspectRatio="16:3" touchType="Windows" touchStyle="Standard" EDID="EFL1503_PCS"/>
+        <Monitor index="6" name="VTOP1" left="0" top="-3960" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703"/>		
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="6UpDown-button" description="6 button with up down bet" image="Images/6UpDown-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="LDM" description="Dynasty Low Denom Mech" image="Images/LDM.bmp" cabinetStyle="MMG_ldm">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="7" name="MAIN" left="0" top="0" width="3840" height="2160" rotation="90" frequency="60" aspectRatio="9:16" resolution="4K" touchType="Windows" EDID="EFR4903" touchStyle="Standard"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="3840" width="1920" height="448" rotation="0" frequency="60" aspectRatio="30:7" touchType="Digitizer" EDID="KTK0021" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" />
+      </ButtonPanels>
+      <Marquees />
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="DCX" description="Dual Curved Video with LCD button panel" image="Images/DCX.bmp" cabinetStyle="MMG_dualcurve">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="5" name="MAIN" left="0" top="0" width="3840" height="2160" rotation="0" frequency="60" aspectRatio="16:9" resolution="4K" touchType="Windows" EDID="TOV4201" touchStyle="Standard"/>
+        <Monitor index="1" name="TOP" left="0" top="-2160" width="3840" height="2160" rotation="180" frequency="60" aspectRatio="16:9" resolution="4K" touchType="None" EDID="TOV4202"/>
+        <Monitor index="4" name="BUTTON_PANEL" left="0" top="2160" width="1280" height="242" rotation="0" frequency="60" aspectRatio="16:3" touchType="MicroTouch" EDID="EFL5202_BP" controllerIDs="1225" touchStyle="Standard"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="DCX" packetRows="4" packetFormat="0xFB"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="4.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="TopLeft" text="TopLeft"/>
+            <Button id="TopRight" text="TopRight"/>
+            <Button id="MiddleLeft" text="Left"/>
+            <Button id="MiddleCenter" text="Subwoofer"/>
+            <Button id="MiddleRight" text="Right"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="DCX" description="Dual Curved Video with Digitizer Button Panel" image="Images/DCX.bmp" cabinetStyle="MMG_dualcurve">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="5" name="MAIN" left="0" top="0" width="3840" height="2160" rotation="0" frequency="60" aspectRatio="16:9" resolution="4K" touchType="Windows" EDID="TOV4201" touchStyle="Standard"/>
+        <Monitor index="1" name="TOP" left="0" top="-2160" width="3840" height="2160" rotation="180" frequency="60" aspectRatio="16:9" resolution="4K" touchType="None" EDID="TOV4202"/>
+        <Monitor index="4" name="BUTTON_PANEL" left="0" top="2160" width="1280" height="342" rotation="0" frequency="60" aspectRatio="15:4" touchType="Digitizer" EDID="EFL1503" touchStyle="Standard"/>
+      </Monitors>
+      <Registry>
+        <Set hkey="HKLM" key="SOFTWARE\Microsoft\Wisp\Pen\Digimon" type="REG_SZ" name="20-\\?\hid#vid_2619&amp;pid_4202#8&amp;117591ad&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" data="\\?\DISPLAY#EFL1503#5&amp;1bccafac&amp;0&amp;UID1288#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}" />
+      </Registry>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="DCX" packetRows="4" packetFormat="0xFB"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="4.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="TopLeft" text="TopLeft"/>
+            <Button id="TopRight" text="TopRight"/>
+            <Button id="MiddleLeft" text="Left"/>
+            <Button id="MiddleCenter" text="Subwoofer"/>
+            <Button id="MiddleRight" text="Right"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="E355" description="3 Monitors with LCD button panel" image="Images/E355.bmp" cabinetStyle="MMG_e355">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="6" name="MAIN" left="1920" top="0" width="1920" height="1080" rotation="270" frequency="60" aspectRatio="9:16" touchType="None" EDID="EFL-5503HLIG-2"/>
+        <Monitor index="5" name="LEFT" left="0" top="0" width="1920" height="1080" rotation="270" frequency="60" aspectRatio="9:16" touchType="None" EDID="EFL5503"/>
+        <Monitor index="4" name="RIGHT" left="3840" top="0" width="1920" height="1080" rotation="270" frequency="60" aspectRatio="9:16" touchType="None" EDID="EFL-5503HLIG-3"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="1920" width="1280" height="342" rotation="0" frequency="60" aspectRatio="15:4" touchType="Digitizer" EDID="EFL1503" touchStyle="Standard"/>
+      </Monitors>
+      <Registry>
+        <Set hkey="HKLM" key="SOFTWARE\Microsoft\Wisp\Pen\Digimon" type="REG_SZ" name="20-\\?\hid#vid_2619&amp;pid_4202#8&amp;117591ad&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" data="\\?\DISPLAY#EFL1503#4&amp;4440be2&amp;0&amp;UID1024#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}" />
+      </Registry>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" trackPadType="Standard"/>
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="E355" packetRows="4" packetFormat="0xFB"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Empire 49 Curved" description="Empire based cabinet with a 49 inch curved monitor and a digitizer button panel" image="Images/E49C.bmp" cabinetStyle="MMG_e49c">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="4" name="MAIN" left="0" top="0" width="3840" height="2160" rotation="90" frequency="60" aspectRatio="9:16" resolution="4K" touchType="Windows" EDID="EFL4303" touchStyle="Standard"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="3840" width="1280" height="342" rotation="0" frequency="60" aspectRatio="15:4" touchType="Digitizer" EDID="EFL1503" touchStyle="Standard"/>
+      </Monitors>
+      <Registry>
+        <Set hkey="HKLM" key="SOFTWARE\Microsoft\Wisp\Pen\Digimon" type="REG_SZ" name="20-\\?\hid#vid_2619&amp;pid_4202#8&amp;117591ad&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" data="\\?\DISPLAY#EFL1503#4&amp;4440be2&amp;0&amp;UID1024#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}" />
+      </Registry>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="EmpireMPX" packetRows="2" packetFormat="0x7B"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Empire 49 Curved With Single Topper" description="Empire based cabinet with a 49 inch curved monitor, a digitizer button panel, and an Apex Edge" image="Images/E49C.bmp" cabinetStyle="MMG_e49cEnhanced">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="4" name="MAIN" left="0" top="0" width="3840" height="2160" rotation="90" frequency="60" aspectRatio="9:16" resolution="4K" touchType="Windows" EDID="EFL4303" touchStyle="Standard"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="3840" width="1280" height="342" rotation="0" frequency="60" aspectRatio="15:4" touchType="Digitizer" EDID="EFL1503" touchStyle="Standard"/>
+        <Monitor index="5" name="VTOP1" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703" isG2STopper="true"/>
+      </Monitors>
+      <Registry>
+        <Set hkey="HKLM" key="SOFTWARE\Microsoft\Wisp\Pen\Digimon" type="REG_SZ" name="20-\\?\hid#vid_2619&amp;pid_4202#8&amp;117591ad&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" data="\\?\DISPLAY#EFL1503#4&amp;4440be2&amp;0&amp;UID1024#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}" />
+      </Registry>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="EmpireMPX" packetRows="2" packetFormat="0x7B"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+  </Configurations>
+  <Configurations hwplatform="Quixant" hwmodel="QX6010">
+    <Configuration name="Standard Mech" description="Mini with Top Screen" image="Images/Mech.bmp" cabinetStyle="MMG_mech">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="1" name="MAIN" left="0" top="0" width="1280" height="1024" rotation="0" frequency="60" aspectRatio="5:4" touchType="MicroTouch" EDID="EFL076F" touchStyle="Standard"/>
+        <Monitor index="5" name="MINI" left="0" top="1024" width="640" height="480" rotation="0" frequency="60" aspectRatio="4:3" touchType="eGalaxTouch" EDID="EFL2306" touchStyle="Standard"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="5-button" description="5 button" image="Images/5-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="6-button" description="6 button" image="Images/6-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="9-button" description="9 button" image="Images/9-button.bmp" playButtonDelay="120" />
+        <ButtonPanel type="14-button" description="14 button" image="Images/14-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="PCS Mech" description="Player Classic Signature Mech" image="Images/PCSMech.bmp" cabinetStyle="MMG_pcsmech" digitalMechReelAssetsFolder="PCS_DMR/MINI">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="7" name="MAIN" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="Windows" touchStyle="Standard" EDID="EFL2103"/>
+        <Monitor index="2" name="TOP" left="0" top="-2880" width="2560" height="2880" rotation="0" frequency="60" aspectRatio="16:18" touchType="None" EDID="TOV001C"/>
+        <Monitor index="5" name="MINI" left="0" top="1080" width="1280" height="204" rotation="0" frequency="60" aspectRatio="16:3" touchType="Windows" touchStyle="Standard" EDID="EFL1503_PCS"/>
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="6UpDown-button" description="6 button with up down bet" image="Images/6UpDown-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="PCS Mech With Single Topper" description="Player Classic Signature Mech With Single Topper" image="Images/PCSMechTopper.bmp" cabinetStyle="MMG_pcsmechtopper">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="7" name="MAIN" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="Windows" touchStyle="Standard" EDID="EFL2103"/>
+        <Monitor index="2" name="TOP" left="0" top="-2880" width="2560" height="2880" rotation="0" frequency="60" aspectRatio="16:18" touchType="None" EDID="TOV001C"/>
+        <Monitor index="5" name="MINI" left="0" top="1080" width="1280" height="204" rotation="0" frequency="60" aspectRatio="16:3" touchType="Windows" touchStyle="Standard" EDID="EFL1503_PCS"/>
+        <Monitor index="6" name="VTOP1" left="0" top="-3960" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703"/>		
+      </Monitors>
+      <MechanicalReels />
+      <ButtonPanels>
+        <ButtonPanel type="6UpDown-button" description="6 button with up down bet" image="Images/6UpDown-button.bmp" playButtonDelay="120" />
+      </ButtonPanels>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+      </Audio>
+    </Configuration>
+    <Configuration name="HDX" description="Dual Video with LCD button panel" image="Images/HDX.bmp" cabinetStyle="MMG_hdx">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="6" name="MAIN" left="0" top="0" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="MicroTouch" EDID="MMG1609A2" controllerIDs="23,160901" touchStyle="Standard"/>
+        <Monitor index="5" name="TOP" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="MicroTouch" touchOptional="true" controllerIDs="123,160902" EDID="MMG1609A1"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="768" width="1280" height="242" rotation="0" frequency="60" aspectRatio="16:3" touchType="MicroTouch" EDID="EFL5202_BP" controllerIDs="1225" touchStyle="Standard"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn"/>
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="CoreHDX" packetRows="2" packetFormat="0x7B"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="0.600" EQUALIZER_HIGH_CUTOFF="4000.0" EQUALIZER_OVERALL_GAIN="0.70"/>
+          </Profile>
+          <Profile type="HDX">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.70"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="0.600" EQUALIZER_HIGH_CUTOFF="4000.0" EQUALIZER_OVERALL_GAIN="0.40"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="HDX with Single Topper" description="Dual Video with LCD button panel and Single Topper Display" image="Images/HDX_N.bmp" cabinetStyle="MMG_hdx">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="6" name="MAIN" left="0" top="0" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="MicroTouch" EDID="MMG1609A2" controllerIDs="23,160901" touchStyle="Standard"/>
+        <Monitor index="5" name="TOP" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="MicroTouch" touchOptional="true" controllerIDs="123,160902" EDID="MMG1609A1"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="768" width="1280" height="242" rotation="0" frequency="60" aspectRatio="16:3" touchType="MicroTouch" EDID="EFL5202_BP" controllerIDs="1225" touchStyle="Standard"/>
+        <Monitor index="2" name="VTOP1" left="0" top="-1536" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703" isG2STopper="true"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn"/>
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="CoreHDX" packetRows="2" packetFormat="0x7B"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="0.600" EQUALIZER_HIGH_CUTOFF="4000.0" EQUALIZER_OVERALL_GAIN="0.70"/>
+          </Profile>
+          <Profile type="HDX">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.70"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="0.600" EQUALIZER_HIGH_CUTOFF="4000.0" EQUALIZER_OVERALL_GAIN="0.40"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="DCX" description="Dual Curved Video with LCD button panel" image="Images/DCX.bmp" cabinetStyle="MMG_dualcurve">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="5" name="MAIN" left="0" top="0" width="3840" height="2160" rotation="0" frequency="60" aspectRatio="16:9" resolution="4K" touchType="Windows" EDID="TOV4201" touchVendorID="0x29BD" touchStyle="Standard"/>
+        <Monitor index="1" name="TOP" left="0" top="-2160" width="3840" height="2160" rotation="180" frequency="60" aspectRatio="16:9" resolution="4K" touchType="None" EDID="TOV4202"/>
+        <Monitor index="4" name="BUTTON_PANEL" left="0" top="2160" width="1280" height="242" rotation="0" frequency="60" aspectRatio="16:3" touchType="MicroTouch" EDID="EFL5202_BP" controllerIDs="1225" touchStyle="Standard" touchVendorID="0x0596"/>
+      </Monitors>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="DCX" packetRows="4" packetFormat="0xFB"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="4.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="TopLeft" text="TopLeft"/>
+            <Button id="TopRight" text="TopRight"/>
+            <Button id="MiddleLeft" text="Left"/>
+            <Button id="MiddleCenter" text="Subwoofer"/>
+            <Button id="MiddleRight" text="Right"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="DCX" description="Dual Curved Video with Digitizer Button Panel" image="Images/DCX.bmp" cabinetStyle="MMG_dualcurve">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="5" name="MAIN" left="0" top="0" width="3840" height="2160" rotation="0" frequency="60" aspectRatio="16:9" resolution="4K" touchType="Windows" EDID="TOV4201" touchVendorID="0x29BD" touchStyle="Standard"/>
+        <Monitor index="1" name="TOP" left="0" top="-2160" width="3840" height="2160" rotation="180" frequency="60" aspectRatio="16:9" resolution="4K" touchType="None" EDID="TOV4202"/>
+        <Monitor index="4" name="BUTTON_PANEL" left="0" top="2160" width="1280" height="342" rotation="0" frequency="60" aspectRatio="15:4" touchType="Digitizer" EDID="EFL1503" touchVendorID="0x2619" touchStyle="Standard"/>
+      </Monitors>
+      <Registry>
+        <Set hkey="HKLM" key="SOFTWARE\Microsoft\Wisp\Pen\Digimon" type="REG_SZ" name="20-\\?\hid#vid_2619&amp;pid_4202#8&amp;117591ad&amp;1&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" data="\\?\DISPLAY#EFL1503#5&amp;1bccafac&amp;0&amp;UID520#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}" />
+      </Registry>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="DCX" packetRows="4" packetFormat="0xFB"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="4.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="TopLeft" text="TopLeft"/>
+            <Button id="TopRight" text="TopRight"/>
+            <Button id="MiddleLeft" text="Left"/>
+            <Button id="MiddleCenter" text="Subwoofer"/>
+            <Button id="MiddleRight" text="Right"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Empire 49 Curved" description="Empire based cabinet with a 49 inch curved monitor and a digitizer button panel" image="Images/E49C.bmp" cabinetStyle="MMG_e49c">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="4" name="MAIN" left="0" top="0" width="3840" height="2160" rotation="90" frequency="60" aspectRatio="9:16" resolution="4K" touchType="Windows" EDID="EFL4303" touchVendorID="0x2619" touchStyle="Standard"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="3840" width="1280" height="342" rotation="0" frequency="60" aspectRatio="15:4" touchType="Digitizer" EDID="EFL1503" touchStyle="Standard"/>
+      </Monitors>
+      <Registry>
+        <Set hkey="HKLM" key="SOFTWARE\Microsoft\Wisp\Pen\Digimon" type="REG_SZ" name="20-\\?\hid#vid_2619&amp;pid_4202#8&amp;117591ad&amp;1&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" data="\\?\DISPLAY#EFL1503#4&amp;4440be2&amp;0&amp;UID256#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}" />
+      </Registry>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="EmpireMPX" packetRows="2" packetFormat="0x7B"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Empire 49 Curved With Single Topper" description="Empire based cabinet with a 49 inch curved monitor, a digitizer button panel, and an Apex Edge" image="Images/E49C.bmp" cabinetStyle="MMG_e49cEnhanced">
+      <Monitors fullscreen="true" vsync="true" windowchrome="false">
+        <Monitor index="4" name="MAIN" left="0" top="0" width="3840" height="2160" rotation="90" frequency="60" aspectRatio="9:16" resolution="4K" touchType="Windows" EDID="EFL4303" touchStyle="Standard"/>
+        <Monitor index="1" name="BUTTON_PANEL" left="0" top="3840" width="1280" height="342" rotation="0" frequency="60" aspectRatio="15:4" touchType="Digitizer" EDID="EFL1503" touchStyle="Standard"/>
+        <Monitor index="5" name="VTOP1" left="0" top="-768" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="APN2703" isG2STopper="true"/>
+      </Monitors>
+      <Registry>
+        <Set hkey="HKLM" key="SOFTWARE\Microsoft\Wisp\Pen\Digimon" type="REG_SZ" name="20-\\?\hid#vid_2619&amp;pid_4202#8&amp;117591ad&amp;1&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}" data="\\?\DISPLAY#EFL1503#4&amp;4440be2&amp;0&amp;UID256#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}" />
+      </Registry>
+      <ButtonPanels>
+        <ButtonPanel type="LCD" description="LCD button panel" playButtonDelay="0" callLightType="FlashingOn" />
+      </ButtonPanels>
+      <Marquees>
+        <Marquee type="Standard" style="EmpireMPX" packetRows="2" packetFormat="0x7B"/>
+        <Marquee type="PWM"/>
+      </Marquees>
+      <Audio outputChannels="2.1">
+        <TechUI>
+          <TestButtons>
+            <Button id="Left" text="Left"/>
+            <Button id="Right" text="Right"/>
+            <Button id="Center" text="Subwoofer"/>
+          </TestButtons>
+        </TechUI>
+        <Game>
+          <Profile type="Neutral">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="3000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="0.60"/>
+          </Profile>
+          <Profile type="FullDynamic">
+            <Equalizer EQUALIZER_LOW_GAIN="1.0" EQUALIZER_LOW_CUTOFF="200.0" EQUALIZER_MID1_GAIN="1.0" EQUALIZER_MID1_CENTER="500.0" EQUALIZER_MID1_WIDTH="1.0" EQUALIZER_MID2_GAIN="1.0" EQUALIZER_MID2_CENTER="1000.0" EQUALIZER_MID2_WIDTH="1.0" EQUALIZER_HIGH_GAIN="1.0" EQUALIZER_HIGH_CUTOFF="6000.0" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+  </Configurations>
+  <Configurations hwplatform="Quixant" hwmodel="QXI4000">
+    <Configuration name="Signforce Single LCD" description="Signforce with a single LCD monitor" image="Images/Signforce_1x_16x9.bmp" cabinetStyle="MMG_signforceSingleLCD" configMode="Manual"> 
+      <Monitors fullscreen="1" vsync="1" windowchrome="0"> 
+        <Monitor index="1" name="VTOP1" left="0" top="0" width="1360" height="768" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID=""/>
+      </Monitors>
+      <Audio>
+        <Game>
+          <Profile type="Neutral"> 
+            <Equalizer EQUALIZER_LOW_GAIN="6.650001" EQUALIZER_LOW_CUTOFF="211.000000" EQUALIZER_MID1_GAIN="1.002000" EQUALIZER_MID1_CENTER="500.000000" EQUALIZER_MID1_WIDTH="0.970000" EQUALIZER_MID2_GAIN="1.000000" EQUALIZER_MID2_CENTER="3000.000000" EQUALIZER_MID2_WIDTH="0.900000" EQUALIZER_HIGH_GAIN="0.979000" EQUALIZER_HIGH_CUTOFF="5763.000000" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Signforce Single Portrait LCD" description="Signforce with a single LCD monitor in Portrait mode" image="Images/Signforce_1x_9x16.png" cabinetStyle="MMG_signforceSinglePortraitLCD" configMode="Manual"> 
+      <Monitors fullscreen="1" vsync="1" windowchrome="0"> 
+        <Monitor index="1" name="VTOP1" left="0" top="0" width="1360" height="768" rotation="90" frequency="60" aspectRatio="9:16" touchType="None" EDID=""/>
+      </Monitors>
+      <Audio>
+        <Game>
+          <Profile type="Neutral"> 
+            <Equalizer EQUALIZER_LOW_GAIN="6.650001" EQUALIZER_LOW_CUTOFF="211.000000" EQUALIZER_MID1_GAIN="1.002000" EQUALIZER_MID1_CENTER="500.000000" EQUALIZER_MID1_WIDTH="0.970000" EQUALIZER_MID2_GAIN="1.000000" EQUALIZER_MID2_CENTER="3000.000000" EQUALIZER_MID2_WIDTH="0.900000" EQUALIZER_HIGH_GAIN="0.979000" EQUALIZER_HIGH_CUTOFF="5763.000000" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Creative Surfaces - Curved LED" description="Signforce with Curved LED from Creative Surfaces" image="Images/Signforce_Oval.bmp" cabinetStyle="MMG_signforceCreativeCurvedLED"> 
+      <Monitors fullscreen="1" vsync="1" windowchrome="0"> 
+        <Monitor index="1" name="VTOP1" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="SignForceOval3001111700"/>
+      </Monitors>
+      <Audio>
+        <Game>
+          <Profile type="Neutral"> 
+            <Equalizer EQUALIZER_LOW_GAIN="6.650001" EQUALIZER_LOW_CUTOFF="211.000000" EQUALIZER_MID1_GAIN="1.002000" EQUALIZER_MID1_CENTER="500.000000" EQUALIZER_MID1_WIDTH="0.970000" EQUALIZER_MID2_GAIN="1.000000" EQUALIZER_MID2_CENTER="3000.000000" EQUALIZER_MID2_WIDTH="0.900000" EQUALIZER_HIGH_GAIN="0.979000" EQUALIZER_HIGH_CUTOFF="5763.000000" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Creative Surfaces - TRI-LED" description="Signforce with TRI-LED from Creative Surfaces" image="Images/Signforce_Tripod.bmp" cabinetStyle="MMG_signforceCreativeTriLED"> 
+      <Monitors fullscreen="1" vsync="1" windowchrome="0"> 
+        <Monitor index="1" name="VTOP1" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="SignForceTri3001111600"/>
+      </Monitors>
+      <Audio>
+        <Game>
+          <Profile type="Neutral"> 
+            <Equalizer EQUALIZER_LOW_GAIN="6.650001" EQUALIZER_LOW_CUTOFF="211.000000" EQUALIZER_MID1_GAIN="1.002000" EQUALIZER_MID1_CENTER="500.000000" EQUALIZER_MID1_WIDTH="0.970000" EQUALIZER_MID2_GAIN="1.000000" EQUALIZER_MID2_CENTER="3000.000000" EQUALIZER_MID2_WIDTH="0.900000" EQUALIZER_HIGH_GAIN="0.979000" EQUALIZER_HIGH_CUTOFF="5763.000000" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile> 
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Creative Surfaces Round 2.5mm LED" description="Signforce with Round LED from Creative Surfaces" image="Images/Signforce_Circle.bmp" cabinetStyle="MMG_signforceCreative360DLED"> 
+      <Monitors fullscreen="1" vsync="1" windowchrome="0"> 
+        <Monitor index="1" name="VTOP1" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID="SignForceCircle3001108100"/>
+      </Monitors>
+      <Audio>
+        <Game>
+          <Profile type="Neutral"> 
+            <Equalizer EQUALIZER_LOW_GAIN="6.650001" EQUALIZER_LOW_CUTOFF="211.000000" EQUALIZER_MID1_GAIN="1.002000" EQUALIZER_MID1_CENTER="500.000000" EQUALIZER_MID1_WIDTH="0.970000" EQUALIZER_MID2_GAIN="1.000000" EQUALIZER_MID2_CENTER="3000.000000" EQUALIZER_MID2_WIDTH="0.900000" EQUALIZER_HIGH_GAIN="0.979000" EQUALIZER_HIGH_CUTOFF="5763.000000" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile>
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Eye-Fi - Curved LED" description="Signforce with Curved LED from Eye-Fi" image="Images/Signforce_Oval.bmp" cabinetStyle="MMG_signforceEyeFiCurvedLED" configMode="Manual"> 
+      <Monitors fullscreen="1" vsync="1" windowchrome="0"> 
+        <Monitor index="1" name="VTOP1" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID=""/>
+      </Monitors>
+      <Audio>
+        <Game>
+          <Profile type="Neutral"> 
+            <Equalizer EQUALIZER_LOW_GAIN="6.650001" EQUALIZER_LOW_CUTOFF="211.000000" EQUALIZER_MID1_GAIN="1.002000" EQUALIZER_MID1_CENTER="500.000000" EQUALIZER_MID1_WIDTH="0.970000" EQUALIZER_MID2_GAIN="1.000000" EQUALIZER_MID2_CENTER="3000.000000" EQUALIZER_MID2_WIDTH="0.900000" EQUALIZER_HIGH_GAIN="0.979000" EQUALIZER_HIGH_CUTOFF="5763.000000" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile> 
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Eye-Fi - TRI-LED" description="Signforce with TRI-LED from Eye-Fi" image="Images/Signforce_Tripod.bmp" cabinetStyle="MMG_signforceEyeFiTriLED" configMode="Manual"> 
+      <Monitors fullscreen="1" vsync="1" windowchrome="0"> 
+        <Monitor index="1" name="VTOP1" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID=""/>
+      </Monitors>
+      <Audio>
+        <Game>
+          <Profile type="Neutral"> 
+            <Equalizer EQUALIZER_LOW_GAIN="6.650001" EQUALIZER_LOW_CUTOFF="211.000000" EQUALIZER_MID1_GAIN="1.002000" EQUALIZER_MID1_CENTER="500.000000" EQUALIZER_MID1_WIDTH="0.970000" EQUALIZER_MID2_GAIN="1.000000" EQUALIZER_MID2_CENTER="3000.000000" EQUALIZER_MID2_WIDTH="0.900000" EQUALIZER_HIGH_GAIN="0.979000" EQUALIZER_HIGH_CUTOFF="5763.000000" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile> 
+        </Game>
+      </Audio>
+    </Configuration>
+    <Configuration name="Eye-Fi Round 3.0mm LED" description="Signforce with Round LED from Eye-Fi" image="Images/Signforce_Circle.bmp" cabinetStyle="MMG_signforceEyeFi360DLED" configMode="Manual"> 
+      <Monitors fullscreen="1" vsync="1" windowchrome="0"> 
+        <Monitor index="1" name="VTOP1" left="0" top="0" width="1920" height="1080" rotation="0" frequency="60" aspectRatio="16:9" touchType="None" EDID=""/>
+      </Monitors>
+      <Audio>
+        <Game>
+          <Profile type="Neutral"> 
+            <Equalizer EQUALIZER_LOW_GAIN="6.650001" EQUALIZER_LOW_CUTOFF="211.000000" EQUALIZER_MID1_GAIN="1.002000" EQUALIZER_MID1_CENTER="500.000000" EQUALIZER_MID1_WIDTH="0.970000" EQUALIZER_MID2_GAIN="1.000000" EQUALIZER_MID2_CENTER="3000.000000" EQUALIZER_MID2_WIDTH="0.900000" EQUALIZER_HIGH_GAIN="0.979000" EQUALIZER_HIGH_CUTOFF="5763.000000" EQUALIZER_OVERALL_GAIN="1.0"/>
+          </Profile> 
+        </Game>
+      </Audio>
+    </Configuration>
+  </Configurations>
+</ConfigurationsByHwPlatform>
